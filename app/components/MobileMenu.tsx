@@ -17,18 +17,18 @@ function MobileMenu() {
 
       <nav>
         <ul className='flex flex-col gap-5 items-center justify-between text-secondary'>
-          <li><Link href="#Home">Accueil</Link></li>
+          <li><Link href="/">Accueil</Link></li>
           <Seperator />
-          <li><Link href="#Home">Fonctionalités</Link></li>
+          <li><Link href="#features">Fonctionalités</Link></li>
           <Seperator />
-          <li><Link href="#Home">Equipe</Link></li>
+          <li><Link href="#team">Equipe</Link></li>
           <Seperator />
-          <li><Link href="#Home">FAQ</Link></li>
+          <li><Link href="#faq">FAQ</Link></li>
           <Seperator />
         </ul>
       </nav>
 
-      <ButtonPrimary text='Télécharger' className='w-[300px] mx-auto' />
+      <Link href="/"><ButtonPrimary text='Télécharger' className='w-[300px] mx-auto' /></Link>
     </div>
   )
 }
