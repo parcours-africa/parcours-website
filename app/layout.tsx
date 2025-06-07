@@ -12,8 +12,33 @@ const poppins = Poppins(
 );
 
 export const metadata: Metadata = {
-  title: "Parcours",
-  description: "Étudier n’a jamais été aussi  facile",
+  title: "Transformez votre parcours scolaire | Parcours",
+  description: "Découvre Parcours, la plateforme qui révolutionne le suivi scolaire et universitaire.",
+  keywords: ["Parcours", "éducation", "suivi scolaire", "Bénin", "université"],
+  authors: [{ name: "Prince Ekpinse", url: "https://linkedin.com/in/prince-ekpinse" }],
+  openGraph: {
+    title: "Parcours - Suivi scolaire innovant",
+    description: "Rejoins Parcours et découvre comment accompagner chaque élève vers la réussite.",
+    url: "https://parcours.bj/",
+    siteName: "Parcours",
+    images: [
+      {
+        url: "/opengraph.png", // placé dans le dossier public ou app
+        width: 1200,
+        height: 630,
+        alt: "Aperçu de la plateforme Parcours",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Parcours - application scolaire innovante",
+    description: "Une plateforme éducative conçue pour le Bénin et l'Afrique.",
+    images: ["/opengraph.png"],
+    creator: "@phitec",
+  },
 };
 
 export default function RootLayout({

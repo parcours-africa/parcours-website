@@ -31,8 +31,8 @@ function Footer() {
                 </div>
 
                 <div className='flex items-center gap-5'>
-                    <Link href="/"><ButtonPrimary text='Playstore' icon={"/playstore-icon.png"} /></Link>
-                    <Link href="/"><ButtonPrimary text='AppStore' icon={"/appstore-icon.png"} /></Link>
+                    <Link href="/"><ButtonPrimary text='Playstore' icon={"/playstore-2.png"} /></Link>
+                    <Link href="/"><ButtonPrimary text='AppStore' icon={"/appstore-2.png"} /></Link>
                 </div>
             </div>
             <p className='text-primary'>C Copyrights {new Date().getUTCFullYear()} Parcours  All rights reserved.</p>
