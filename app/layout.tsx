@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Transformez votre parcours scolaire | Parcours",
   description: "Découvre Parcours, la plateforme qui révolutionne le suivi scolaire et universitaire.",
   keywords: ["Parcours", "éducation", "suivi scolaire", "Bénin", "université"],
-  authors: [{ name: "Prince Ekpinse", url: "https://linkedin.com/in/prince-ekpinse" }],
+  authors: [{ name: "Phitec", url: "http://parcours.bj/" }],
   openGraph: {
     title: "Parcours - Suivi scolaire innovant",
     description: "Rejoins Parcours et découvre comment accompagner chaque élève vers la réussite.",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Parcours",
     images: [
       {
-        url: "/opengraph.png", // placé dans le dossier public ou app
+        url: "/opengraph.png",
         width: 1200,
         height: 630,
         alt: "Aperçu de la plateforme Parcours",
