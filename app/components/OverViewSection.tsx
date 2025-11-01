@@ -20,8 +20,8 @@ function OverViewSection() {
                     <h1>votre apprentissage</h1>
                 </h1>
                 <div className="flex flex-col md:flex-row items-center justify-center md:w-[600px]">
-                    <FeatureCard icon='/book-open.svg' title='Ut enim ad minim veniam' description='Lorem ipsum dolor sit amet, consectetur  adipiscing elit' />
-                    <FeatureCard icon='/book-open.svg' title='Ut enim ad minim veniam' description='Lorem ipsum dolor sit amet, consectetur  adipiscing elit' />
+                    <FeatureCard icon='/book-open.svg' title='Apprenez à votre rythme' description='Accédez à des cours audio et texte, avec des quiz interactifs pour progresser selon votre vitesse.' />
+                    <FeatureCard icon='/book-open.svg' title='Apprentissage hors ligne' description='Téléchargez vos cours et documents pour continuer à apprendre même sans connexion Internet.' />
                 </div>
             </div>
         </section>

@@ -26,7 +26,7 @@ function Header() {
           </ul>
         </nav>
 
-        <Link href="/"><ButtonPrimary className='hidden md:flex' text='Télécharger'/></Link>
+        <Link href="https://play.google.com/store/apps/details?id=com.phitec.parcours&pcampaignid=web_share" target='_blank' rel="noopener noreferrer"><ButtonPrimary className='hidden md:flex' text='Télécharger'/></Link>
 
         <div onClick={() => setToogleMenu(true)} className='flex md:hidden items-center justify-center cursor-pointer border-[2px] border-secondary w-10 h-10 rounded-xl'>
           <AlignJustify />

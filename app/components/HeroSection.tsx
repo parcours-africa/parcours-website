@@ -14,18 +14,17 @@ function HeroSection() {
                     <span className='flex gap-3'>été aussi <HeadingTitle imageUrl='/heading.png' title='facile'/> </span>
                 </h1>
                 <p className="opacity-80 text-md/relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Accédez à des cours, explorez les filières et trouvez des établissements en quelques clics.
                 </p>
                 <div className="flex flex-col justify-center gap-4 p-3 rounded-xl bg-primary/10 lg:w-[480px]">
                     <p className='font-semibold'>
-                        “Ut enim ad minim veniam, quis nostrud
-                        ullamco laboris nisi ut aliquip”
+                        Des contenus interactifs et accessibles, même hors ligne, pour avancer selon mes besoins.
                     </p>
-                    <h2 className='text-white/80'>Duis aute irure dolor in reprehenderit</h2>
+                    <h2 className='text-white/80'>“Apprendre n’a jamais été aussi simple.”</h2>
                 </div>
                 <div className="flex items-center gap-5">
-                    <Link href="/"><ButtonSecondary text='Playstore' icon={"/playstore-icon.png"} /></Link>
-                    <Link href="/"><ButtonSecondary text='AppStore' icon={"/appstore-icon.png"} /></Link>
+                    <Link href="https://play.google.com/store/apps/details?id=com.phitec.parcours&pcampaignid=web_share" target='_blank' rel="noopener noreferrer"><ButtonSecondary text='Playstore' icon={"/playstore-icon.png"} /></Link>
+                    <Link href="https://play.google.com/store/apps/details?id=com.phitec.parcours&pcampaignid=web_share" target='_blank' rel="noopener noreferrer"><ButtonSecondary text='AppStore' icon={"/appstore-icon.png"} /></Link>
                 </div>
             </div>
 

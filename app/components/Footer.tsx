@@ -23,19 +23,19 @@ function Footer() {
                     </nav>
 
                     <div className="flex items-center gap-5">
-                        <Link href="/"><Image src={"/facebook.png"} alt='Logo Facebook' width={30} height={40} /></Link>
-                        <Link href="/"><Image src={"/twitter.png"} alt='Logo Twitter' width={30} height={40} /></Link>
-                        <Link href="/"><Image src={"/whatsapp.png"} alt='Logo WhatsApp' width={30} height={40} /></Link>
-                        <Link href="/"><Image src={"/linkedin.png"} alt='Logo Linkedin' width={30} height={40} /></Link>
+                        <Link href="https://www.facebook.com/profile.php?id=61568105789200" target='_blankk'><Image src={"/facebook.png"} alt='Logo Facebook' width={30} height={40} /></Link>
+                        <Link href="https://x.com/ParcoursBj" target='_blank'><Image src={"/twitter.png"} alt='Logo Twitter' width={30} height={40} /></Link>
+                        <Link href="https://www.whatsapp.com/channel/0029VayBSC8F1YlYeqSnn63O" target='_blank'><Image src={"/whatsapp.png"} alt='Logo WhatsApp' width={30} height={40} /></Link>
+                        <Link href="https://www.linkedin.com/company/my-parcours/" target='_blank'><Image src={"/linkedin.png"} alt='Logo Linkedin' width={30} height={40} /></Link>
                     </div>
                 </div>
 
                 <div className='flex items-center gap-5'>
-                    <Link href="/"><ButtonPrimary text='Playstore' icon={"/playstore-2.png"} /></Link>
-                    <Link href="/"><ButtonPrimary text='AppStore' icon={"/appstore-2.png"} /></Link>
+                    <Link href="https://play.google.com/store/apps/details?id=com.phitec.parcours&pcampaignid=web_share" target='_blank' rel="noopener noreferrer"><ButtonPrimary text='Playstore' icon={"/playstore-2.png"} /></Link>
+                    <Link href="https://play.google.com/store/apps/details?id=com.phitec.parcours&pcampaignid=web_share" target='_blank' rel="noopener noreferrer"><ButtonPrimary text='AppStore' icon={"/appstore-2.png"} /></Link>
                 </div>
             </div>
-            <p className='text-primary'>C Copyrights {new Date().getUTCFullYear()} Parcours  All rights reserved.</p>
+            <p className='text-primary'> Copyright {new Date().getUTCFullYear()} Parcours - Tous droits réservés.</p>
         </footer>
     )
 }
