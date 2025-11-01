@@ -1,0 +1,64 @@
+name: Deploy Next.js to CloudPanel Server
+
+# Déclenche le workflow sur push sur la branche main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Cloner le repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Installer Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      # 3️⃣ Installer les dépendances
+      - name: Install dependencies
+        run: npm install
+
+      # 4️⃣ Linter et tester (optionnel mais recommandé)
+      #- name: Lint
+      #  run: npm run lint
+
+      # 5️⃣ Builder Next.js
+      - name: Build Next.js
+        run: npm run build
+
+      # 6️⃣ Archiver le build
+      - name: Archive build
+        run: zip -r build.zip .next package.json public node_modules
+
+      # 7️⃣ Déploiement via SSH sur le serveur
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            echo "🟢 Deploy started"
+            cd ~/htdocs/www.parcours.bj
+            # Nettoyer l'ancien build
+            rm -rf .next node_modules package.json package-lock.json
+            # Déployer le nouveau build
+            mkdir -p tmp_deploy
+            cd tmp_deploy
+            unzip ../build.zip
+            cp -r * ../
+            cd ../
+            rm -rf tmp_deploy build.zip
+            npm install --production
+            # Redémarrer PM2
+            pm2 restart parcours-website || pm2 start npm --name "parcours-website" -- start
+            echo "✅ Deploy finished"
