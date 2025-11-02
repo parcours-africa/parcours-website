@@ -2,8 +2,6 @@ import FaqSection from "./components/FaqSection";
 import FeatureSection from "./components/FeatureSection";
 import HeroSection from "./components/HeroSection";
 import OverViewSection from "./components/OverViewSection";
-import TeamSection from "./components/TeamSection";
-
 
 export default function Home() {
   return (
