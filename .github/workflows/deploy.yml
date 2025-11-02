@@ -1,6 +1,5 @@
-name: Deploy Next.js to CloudPanel Server
+name: Deploy parcours WEBSITE to CloudPanel Server
 
-# Déclenche le workflow sur push sur la branche main
 on:
   push:
     branches:
@@ -22,13 +21,15 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      # 3️⃣ Installer les dépendances
+      # 3️⃣ Supprimer le package SWC Windows si présent
+      - name: Remove incompatible SWC package
+        run: |
+          npm uninstall @next/swc-win32-x64-msvc || true
+          rm -rf node_modules package-lock.json
+
+      # 4️⃣ Installer les dépendances
       - name: Install dependencies
         run: npm install
-
-      # 4️⃣ Linter et tester (optionnel mais recommandé)
-      #- name: Lint
-      #  run: npm run lint
 
       # 5️⃣ Builder Next.js
       - name: Build Next.js
@@ -38,7 +39,7 @@ jobs:
       - name: Archive build
         run: zip -r build.zip .next package.json public node_modules
 
-      # 7️⃣ Déploiement via SSH sur le serveur
+      # 7️⃣ Déployer sur le serveur via SSH
       - name: Deploy to server via SSH
         uses: appleboy/ssh-action@v0.1.6
         with:
@@ -49,8 +50,10 @@ jobs:
           script: |
             echo "🟢 Deploy started"
             cd ~/htdocs/www.parcours.bj
+
             # Nettoyer l'ancien build
             rm -rf .next node_modules package.json package-lock.json
+
             # Déployer le nouveau build
             mkdir -p tmp_deploy
             cd tmp_deploy
@@ -58,7 +61,10 @@ jobs:
             cp -r * ../
             cd ../
             rm -rf tmp_deploy build.zip
+
+            # Installer uniquement les dépendances de prod
             npm install --production
+
             # Redémarrer PM2
             pm2 restart parcours-website || pm2 start npm --name "parcours-website" -- start
             echo "✅ Deploy finished"
